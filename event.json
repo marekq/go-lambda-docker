@@ -1,0 +1,3 @@
+{
+    "command": "go build -o abc main.go && go run "
+}

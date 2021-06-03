@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: go-lambda-pipeline
+
+Resources:
+  GoRun:
+    Type: AWS::Serverless::Function 
+    Properties:
+      PackageType: Image
+      MemorySize: 2048
+      Timeout: 30
+      Tracing: Active
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Ref Bucket        
+    Metadata:
+      DockerTag: python-go
+      DockerContext: ./lambda
+      Dockerfile: Dockerfile
+
+  Bucket:
+    Type: AWS::S3::Bucket
