@@ -1,3 +1,5 @@
 {
-    "command": "go build -o abc main.go && go run "
+    "command": "cd /tmp && go build -o outputcode main.go",
+    "input_file": "main.go",
+    "output_file": "outputcode"
 }

@@ -12,7 +12,10 @@ Resources:
       Tracing: Active
       Policies:
         - S3CrudPolicy:
-            BucketName: !Ref Bucket        
+            BucketName: !Ref Bucket   
+      Environment:
+        Variables:
+          s3_bucket_name: !Ref Bucket    
     Metadata:
       DockerTag: python-go
       DockerContext: ./lambda
